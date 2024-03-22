@@ -1,0 +1,29 @@
+{
+    "manifest_version": 3,
+    "name": "ar-password",
+    "description": "An 1password or lastpass like password manager which store encrypted passwords in Arweave",
+    "version": "0.1",
+    "action": {
+        "default_popup": "popup.html",
+        "default_icon": {
+            "16": "images/icon16.png",
+            "48": "images/icon48.png",
+            "128": "images/icon128.png"
+        }
+    },
+    "background": {
+        "service_worker": "background.js"
+    },
+    "content_scripts": [
+        {
+            "matches": ["<all_urls>"],
+            "js": ["content.js"]
+        }
+    ],
+    "icons": {
+        "16": "images/icon16.png",
+        "48": "images/icon48.png",
+        "128": "images/icon128.png"
+    },
+    "permissions": ["activeTab", "tabs", "scripting", "storage"]
+}
